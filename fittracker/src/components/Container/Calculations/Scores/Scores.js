@@ -4,9 +4,9 @@ import "../Scores/Scores.scss";
 export const Scores = () => {
     return (
         <div className="scores-wrapper">
-            <span className="scores-item">BMI</span>
-            <span className="scores-item">CPM</span>
-            <span className="scores-item">PPM</span>
+            <p className="scores-item">BMI</p>
+            <p className="scores-item">CPM</p>
+            <p className="scores-item">PPM</p>
         </div>
     )
 }
