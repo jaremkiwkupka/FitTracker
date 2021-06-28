@@ -1,0 +1,26 @@
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+  cursor: pointer;
+}
+.logo-icon-teardrop {
+  width: 60px;
+  height: 60px;
+  background-color: #e31076;
+  border-radius: 20px 0 20px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.logo-first-letter {
+  color: #fff;
+  font-size: 3em;
+  font-weight: 700;
+}
+.logo-text {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 300;
+}
