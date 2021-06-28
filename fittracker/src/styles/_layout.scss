@@ -1,0 +1,14 @@
+@import "./variables";
+
+body {
+  font-family: $basicFont;
+}
+.heading {
+  color: #fff;
+  font-size: 2em;
+  margin: 50px 0 20px 50px;
+}
+.paragraph {
+  color: #adacad;
+  margin: 0 50px;
+}
