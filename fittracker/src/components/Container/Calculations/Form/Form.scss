@@ -39,7 +39,8 @@
   text-transform: lowercase;
   padding: 20px;
 }
-.form-fields--input {
+.form-fields--input,
+.form-fields--select {
   color: #fff;
   padding: 10px;
   background: $secondaryColor;
@@ -47,7 +48,9 @@
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #fff;
+  font-family: $basicFont;
 }
+
 .calculate-btn {
   color: #fff;
   text-transform: uppercase;
