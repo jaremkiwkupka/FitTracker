@@ -3,6 +3,7 @@ import "./Calculations.scss";
 import {Form} from "./Form/Form";
 import {Scores} from "./Scores/Scores";
 import {CaloricContentOfDiet} from "./CaloricContentOfDiet/CaloricContentOfDiet";
+import {SaveCalculations} from "./SaveCalculations/SaveCalculations";
 
 export const Calculations = () => {
     return (
@@ -11,6 +12,7 @@ export const Calculations = () => {
             <div className="calculations-container">
                 <Scores />
                 <CaloricContentOfDiet />
+                <SaveCalculations />
             </div>
         </section>
     )
