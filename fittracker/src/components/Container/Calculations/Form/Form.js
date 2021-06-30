@@ -39,12 +39,7 @@ export const Form = () => {
                     </div>
                     <div className="form-fields--item">
                         <label className="form-fields--label">Your activity</label>
-                        <select className="form-fields--select" value={form.activity} onChange={handleChange}>
-                            <option value="bieg">Bieg</option>
-                            <option value="spacer">Spacer</option>
-                            <option value="pływanie">Pływanie</option>
-                            <option value="jazda na rowerze">Jazda na rowerze</option>
-                        </select>
+                        <input className="form-fields--input" type="text" name="activity" value={form.activity} onChange={handleChange}/>
                     </div>
                 </div>
                 <div className="form-fields-icons">
