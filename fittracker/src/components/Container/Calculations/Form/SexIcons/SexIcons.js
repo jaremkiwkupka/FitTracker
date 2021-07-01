@@ -1,32 +1,21 @@
-import React, {useState} from "react";
+import React from "react";
+import "../Form.scss";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFemale, faMale} from "@fortawesome/free-solid-svg-icons";
 
-export const SexIcons = ({female, male}) => {
-    const femaleIcon = <FontAwesomeIcon icon={faFemale} />;
-    const maleIcon = <FontAwesomeIcon icon={faMale} />;
-
-    const [isChecked, setIsChecked] = useState(false);
-
-    const handleChange = (e) => {
-        const {name, value} = e.target;
-        setIsChecked(prevstate => {
-            return {
-                ...prevstate,
-                [name]: value
-            }
-        });
-    };
+export const SexIcons = ({female, male, getFemale, getMale}) => {
+    const femaleFA = <FontAwesomeIcon icon={faFemale} />;
+    const maleFA = <FontAwesomeIcon icon={faMale} />;
 
     return (
         <div className="form-fields-icons">
             <label className="form-fields--singleIcon sex-icon" id="female-icon">
-                {femaleIcon}
-                <input type="radio" name="sexIcon" value={female} onClick={handleChange}/>
+                {femaleFA}
+                <input type="radio" name="sexIcon" value={female} onClick={getFemale}/>
             </label>
             <label className="form-fields--singleIcon sex-icon" id="male-icon">
-                {maleIcon}
-                <input type="radio" name="sexIcon" value={male} onClick={handleChange}/>
+                {maleFA}
+                <input type="radio" name="sexIcon" value={male} onClick={getMale}/>
             </label>
         </div>
     )
