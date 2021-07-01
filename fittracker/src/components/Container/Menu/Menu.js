@@ -11,11 +11,11 @@ export const Menu = () => {
 
     return (
         <>
-            <div className="menu-container">
-                <p className="menu-item">{note} Calculate your needs</p>
-                <p className="menu-item">{apple} Your diary</p>
-                <p className="menu-item">{author} About author</p>
-            </div>
+            <ul className="menu-container">
+                <li className="menu-item"><a className="menu-item--link">{note} Calculate your needs</a></li>
+                <li className="menu-item"><a className="menu-item--link">{apple} Your diary</a></li>
+                <li className="menu-item"><a className="menu-item--link">{author} About author</a></li>
+            </ul>
         </>
     )
 }
