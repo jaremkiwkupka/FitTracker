@@ -60,4 +60,9 @@
   background-image: linear-gradient(to right, #e31071, #e5008e, #dd00b0, #c600d7, #9933ff);
   cursor: pointer;
 }
-
+.active {
+  color: #e31071;
+}
+.inactive {
+  color: #fff;
+}
