@@ -73,7 +73,7 @@ export const Form = () => {
                             </div>
                             <div className="form-fields--item">
                                 <label className="form-fields--label">Height</label>
-                                <input className="form-fields--input" id="height" type="number" name="height" placeholder="meters" value={form.height} onChange={handleChange}/>
+                                <input className="form-fields--input" id="height" type="number" name="height" placeholder="centimeters" value={form.height} onChange={handleChange}/>
                             </div>
                             <div className="form-fields--item">
                                 <label className="form-fields--label">Weight</label>
