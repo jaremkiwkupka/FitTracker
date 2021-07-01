@@ -1,0 +1,7 @@
+//input[type="radio"] {
+//  display: none;
+//}
+
+.sex-icon input[type="radio"]:checked + label {
+  color: #e31071;
+}

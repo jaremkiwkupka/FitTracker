@@ -3,17 +3,12 @@ import "../Form/Form.scss";
 import {Scores} from "../Scores/Scores";
 import {CaloricContentOfDiet} from "../CaloricContentOfDiet/CaloricContentOfDiet";
 import {SaveCalculations} from "../SaveCalculations/SaveCalculations";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faFemale, faMale} from "@fortawesome/free-solid-svg-icons";
+import {SexIcons} from "./SexIcons/SexIcons";
 
 export const Form = () => {
-    const female = <FontAwesomeIcon icon={faFemale} />;
-    const male = <FontAwesomeIcon icon={faMale} />;
 
-    const [form, setForm] = useState({age:"", height: "", weight: "", activity:"", sexIcon: ""});
+    const [form, setForm] = useState({age:"", height: "", weight: "", activity:""});
     const [bmi, setBmi] = useState();
-    // const [femaleChecked, setFemaleChecked] = useState(false);
-    // const [maleChecked, setMaleChecked] = useState(false);
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -29,18 +24,6 @@ export const Form = () => {
         e.preventDefault();
         setBmi((form.weight / Math.pow(form.height, 2)).toFixed(2));
     }
-    //
-    // const handleFemaleClassChange = () => {
-    //     const femaleIcon = document.getElementById("female-icon");
-    //     femaleIcon.classList.toggle("active");
-    //     // setFemaleChecked(true);
-    // }
-    //
-    // const handleMaleClassChange = () => {
-    //     const maleIcon = document.getElementById("male-icon");
-    //     maleIcon.classList.toggle("active");
-    //     // setMaleChecked(true);
-    // }
 
         return (
             <>
@@ -66,16 +49,7 @@ export const Form = () => {
                                 <input className="form-fields--input" type="number" name="activity" placeholder="see the tooltip" value={form.activity} onChange={handleChange}/>
                             </div>
                         </div>
-                        <div className="form-fields-icons">
-                            <label className="form-fields--singleIcon sex-icon" id="female-icon">
-                                {female}
-                                <input type="radio" name="sexIcon" value={form.female} onClick={handleChange}/>
-                            </label>
-                            <label className="form-fields--singleIcon sex-icon" id="male-icon">
-                                {male}
-                                <input type="radio" name="sexIcon" value={form.male} onClick={handleChange}/>
-                            </label>
-                        </div>
+                        <SexIcons female={form.female} male={form.male} />
                         <input className="calculate-btn" type="submit" value="Calculate" />
                     </form>
                 </div>
