@@ -17,10 +17,10 @@ export const Footer = () => {
                     to connect the sites and <strong>JSON Server</strong> to make a data base. </p>
             </div>
             <div className="footer-socials">
-                <img className="footer-socials--icons" src={facebook} />
-                <img className="footer-socials--icons" src={instagram} />
-                <img className="footer-socials--icons" src={twitter} />
-                <img className="footer-socials--icons" src={pinterest} />
+                <img className="footer-socials--icons" alt="facebook" src={facebook} />
+                <img className="footer-socials--icons" alt="instagram" src={instagram} />
+                <img className="footer-socials--icons" alt="twitter" src={twitter} />
+                <img className="footer-socials--icons" alt="pinterest" src={pinterest} />
             </div>
         </footer>
     )
