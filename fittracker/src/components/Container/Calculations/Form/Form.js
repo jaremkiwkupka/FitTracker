@@ -44,7 +44,7 @@ export const Form = () => {
         e.preventDefault();
 
         //Calculate BMI
-        setBmi((form.weight / Math.pow(form.height, 2) * 100).toFixed(2));
+        setBmi(((form.weight / Math.pow(form.height, 2)) * 10000).toFixed(2));
 
         //Calculate PPM
         if(femaleChecked === true && maleChecked === false) {
