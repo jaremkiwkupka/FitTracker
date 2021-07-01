@@ -4,9 +4,18 @@ import "../Scores/Scores.scss";
 export const Scores = ({bmiValue, ppmValue, cpmValue}) => {
     return (
         <div className="scores-wrapper">
-            <p className="scores-item">BMI {bmiValue}</p>
-            <p className="scores-item">PPM {ppmValue} kcal</p>
-            <p className="scores-item">CPM {cpmValue} kcal</p>
+            <div className="scores-item">
+                <p className="scores-item--elem">BMI</p>
+                <p className="scores-item--elem">{bmiValue}</p>
+            </div>
+            <div className="scores-item">
+                <p className="scores-item--elem">PPM</p>
+                <p className="scores-item--elem">{ppmValue} kcal</p>
+            </div>
+            <div className="scores-item">
+                <p className="scores-item--elem">CPM</p>
+                <p className="scores-item--elem">{cpmValue} kcal</p>
+            </div>
         </div>
     )
 }

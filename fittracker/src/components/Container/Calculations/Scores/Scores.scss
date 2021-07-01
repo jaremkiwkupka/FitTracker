@@ -13,6 +13,10 @@
   justify-content: center;
 }
 .scores-item {
+  display: flex;
+  justify-content: space-between;
+}
+.scores-item--elem {
   color: #fff;
   padding: 25px;
 }
