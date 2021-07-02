@@ -40,6 +40,14 @@ export const Form = () => {
         console.log("male " + maleChecked);
     };
 
+    const pal = [
+        {id: 1, desc: "sedentary lifestyle, no additional physical exercise", val: 1.2},
+        {id: 2, desc: "a lot of exercise during the day, light workouts", val: 1.5},
+        {id: 3, desc: "a lot of exercise during the day, heavy regular workouts", val: 1.8},
+        {id: 4, desc: "standing work,  light workouts", val: 2.1},
+        {id: 5, desc: "physical work, heavy workouts", val: 2.4}
+    ];
+
     const calculate = (e) => {
         e.preventDefault();
 
@@ -54,7 +62,8 @@ export const Form = () => {
         }
 
         //Calculate CPM
-        setCpm((form.activity * ppm).toFixed(0));
+        const activityLevel = document.getElementById("activity-levels").value;
+        setCpm((activityLevel * ppm).toFixed(0));
 
         //Calculate Caloric Content of Diet
         setCaloricContent((cpm * 0.8).toFixed(0));
@@ -81,7 +90,11 @@ export const Form = () => {
                             </div>
                             <div className="form-fields--item">
                                 <label className="form-fields--label">Your activity</label>
-                                <input className="form-fields--input" type="number" name="activity" placeholder="see the tooltip" value={form.activity} onChange={handleChange}/>
+                                <select className="form-fields--select" id="activity-levels">
+                                    value={form.activity}
+                                    onChange={handleChange}
+                                    {pal.map((el, id) => <option value={el.val} key={el.id}>{el.desc}</option>)}
+                                </select>
                             </div>
                         </div>
                         <SexIcons female={form.female} male={form.male} getFemale={handleFemaleChange} getMale={handleMaleChange}/>
