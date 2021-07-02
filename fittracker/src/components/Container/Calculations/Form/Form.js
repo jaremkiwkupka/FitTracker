@@ -3,7 +3,7 @@ import "../Form/Form.scss";
 import {Scores} from "../Scores/Scores";
 import {CaloricContentOfDiet} from "../CaloricContentOfDiet/CaloricContentOfDiet";
 import {SaveCalculations} from "../SaveCalculations/SaveCalculations";
-import {SexIcons} from "./SexIcons/SexIcons";
+import {GenderIcons} from "./GenderIcons/GenderIcons";
 
 export const Form = () => {
 
@@ -97,7 +97,7 @@ export const Form = () => {
                                 </select>
                             </div>
                         </div>
-                        <SexIcons female={form.female} male={form.male} getFemale={handleFemaleChange} getMale={handleMaleChange}/>
+                        <GenderIcons female={form.female} male={form.male} getFemale={handleFemaleChange} getMale={handleMaleChange}/>
                         <input className="calculate-btn" type="submit" value="Calculate" onClick={calculate}/>
                     </form>
                 </div>
