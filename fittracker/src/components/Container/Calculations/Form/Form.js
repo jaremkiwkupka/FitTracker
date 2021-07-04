@@ -8,10 +8,7 @@ import {GenderIcons} from "./GenderIcons/GenderIcons";
 export const Form = () => {
 
     const [form, setForm] = useState({age:"", height: "", weight: "", activity:"", female: "", male: ""});
-    const [bmi, setBmi] = useState(0);
-    const [ppm, setPpm] = useState(0);
-    const [cpm, setCpm] = useState(0);
-    const [caloricContent, setCaloricContent] = useState(0);
+    const [userScores, setUserScores] = useState({bmi:0, ppm:0, cpm:0, caloricContent:0});
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -29,15 +26,11 @@ export const Form = () => {
     const handleFemaleChange = () => {
         setFemaleChecked(false);
         setMaleChecked(true);
-        console.log("female " + femaleChecked);
-        console.log("male " + maleChecked);
     };
 
     const handleMaleChange = () => {
         setFemaleChecked(true);
         setMaleChecked(false);
-        console.log("female " + femaleChecked);
-        console.log("male " + maleChecked);
     };
 
     const pal = [
@@ -51,23 +44,31 @@ export const Form = () => {
     const calculate = (e) => {
         e.preventDefault();
 
-        //Calculate BMI
-        setBmi(((form.weight / Math.pow(form.height, 2)) * 10000).toFixed(2));
-
-        //Calculate PPM
-        if(femaleChecked === true && maleChecked === false) {
-            setPpm((66.5 + (13.75 * form.weight) + (5.003 * form.height) - (6.775 * form.age)).toFixed(0));
-        } else {
-            setPpm((655.1 + (9.563 * form.weight) + (1.85 * form.height) - (4.676 * form.age)).toFixed(0));
+        const activityLevel = document.getElementById("activity-levels").value;
+        const forFemale = () => {
+            return userScores.ppm = ((66.5 + (13.75 * form.weight) + (5.003 * form.height) - (6.775 * form.age)).toFixed(0));
+        }
+        const forMale = () => {
+            return userScores.ppm = ((655.1 + (9.563 * form.weight) + (1.85 * form.height) - (4.676 * form.age)).toFixed(0));
         }
 
-        //Calculate CPM
-        const activityLevel = document.getElementById("activity-levels").value;
-        setCpm((activityLevel * ppm).toFixed(0));
-
-        //Calculate Caloric Content of Diet
-        setCaloricContent((cpm * 0.8).toFixed(0));
+        setUserScores(userScores => {
+            return {
+                ...userScores,
+                bmi: ((form.weight / Math.pow(form.height, 2)) * 10000).toFixed(2),
+                ppm: femaleChecked === true && maleChecked === false ? forFemale() : forMale(),
+                cpm: ((activityLevel * userScores.ppm).toFixed(0)),
+                caloricContent: ((userScores.cpm * 0.8).toFixed(0))
+            }
+        });
     }
+
+    // const userCalorieNeeds = {
+    //     bmi: {bmi},
+    //     ppm: {ppm},
+    //     cpm: {cpm},
+    //     caloricContent: {caloricContent}
+    // }
 
         return (
             <>
@@ -97,13 +98,13 @@ export const Form = () => {
                                 </select>
                             </div>
                         </div>
-                        <GenderIcons female={form.female} male={form.male} getFemale={handleFemaleChange} getMale={handleMaleChange}/>
+                        <GenderIcons getFemale={handleFemaleChange} getMale={handleMaleChange}/>
                         <input className="calculate-btn" type="submit" value="Calculate" onClick={calculate}/>
                     </form>
                 </div>
                 <div className="calculations-container">
-                    <Scores bmiValue={bmi} ppmValue={ppm} cpmValue={cpm}/>
-                    <CaloricContentOfDiet caloricContent={caloricContent}/>
+                    <Scores bmiValue={userScores.bmi} ppmValue={userScores.ppm} cpmValue={userScores.cpm}/>
+                    <CaloricContentOfDiet caloricContent={userScores.caloricContent}/>
                     <SaveCalculations />
                 </div>
             </>
