@@ -3,6 +3,7 @@ import "../Form.scss";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFemale, faMale} from "@fortawesome/free-solid-svg-icons";
 
+
 export const GenderIcons = ({female, male, getFemale, getMale}) => {
     const femaleFA = <FontAwesomeIcon icon={faFemale} />;
     const maleFA = <FontAwesomeIcon icon={faMale} />;
