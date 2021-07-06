@@ -1,0 +1,73 @@
+@import "../../../styles/variables";
+
+.meals-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.meal-type {
+  display: flex;
+  justify-content: space-between;
+  background-color: $primaryColor;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  height: 50px;
+  width: 95%;
+  margin: 20px 0;
+  padding: 10px 20px;
+}
+.meal-type--heading {
+  align-self: center;
+  font-weight: 700;
+}
+.meal-form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.meal-form {
+  background: #555567;
+  width: 90%;
+  padding: 50px;
+  border-radius: 5px;
+}
+.meal-type--addMeal {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.meal-add-ingredients {
+  display: flex;
+  align-items: stretch;
+  align-self: flex-start;
+  height: 30px;
+  padding-top: 50px;
+}
+.meal-form--label {
+  color: #fff;
+}
+.meal-name--input {
+  width: 30%;
+}
+.meals-input--light,
+.meals-select--light {
+  color: #fff;
+  padding: 10px;
+  background: #555567;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #fff;
+  font-family: $basicFont;
+  text-align: center;
+  margin: 0 50px 0 30px;
+}
+.meal-ingredients--list {
+  border: 1px dotted #fff;
+  border-radius: 5px;
+  margin-top: 70px;
+  padding: 50px;
+}
