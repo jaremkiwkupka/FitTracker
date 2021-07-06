@@ -1,4 +1,7 @@
 import React from "react";
+import {
+    Link
+} from "react-router-dom";
 import "./Menu.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalculator, faAppleAlt, faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
@@ -12,9 +15,15 @@ export const Menu = () => {
     return (
         <>
             <ul className="menu-container">
-                <li className="menu-item"><a className="menu-item--link">{note} Calculate your needs</a></li>
-                <li className="menu-item"><a className="menu-item--link">{apple} Your diary</a></li>
-                <li className="menu-item"><a className="menu-item--link">{author} About author</a></li>
+                <li className="menu-item">
+                    <Link className="menu-item--link" to="/">{note} Calculate your needs</Link>
+                </li>
+                <li className="menu-item">
+                    <Link className="menu-item--link" to="/diary">{apple} Your diary</Link>
+                </li>
+                <li className="menu-item">
+                    <Link className="menu-item--link" to="/author">{author} About author</Link>
+                </li>
             </ul>
         </>
     )

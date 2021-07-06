@@ -27,6 +27,8 @@ li {
 }
 .menu-item--link {
   display: inline-block;
+  color: #fff;
+  text-decoration: none;
 
   &:after {
     background: none repeat scroll 0 0 transparent;
