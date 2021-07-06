@@ -1,0 +1,9 @@
+@import "../../styles/variables";
+
+.diary-container {
+  width: 80vw;
+  height: 100%;
+  border-radius: 5px;
+  background-color: $secondaryColor;
+  margin: 20px;
+}
