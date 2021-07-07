@@ -63,12 +63,12 @@ export const Form = () => {
         });
     }
 
-    // const userCalorieNeeds = {
-    //     bmi: {bmi},
-    //     ppm: {ppm},
-    //     cpm: {cpm},
-    //     caloricContent: {caloricContent}
-    // }
+    const userCalorieNeeds = {
+        bmi: userScores.bmi,
+        ppm: userScores.ppm,
+        cpm: userScores.cpm,
+        caloricContent: userScores.caloricContent
+    }
 
         return (
             <>
@@ -105,7 +105,7 @@ export const Form = () => {
                 <div className="calculations-container">
                     <Scores bmiValue={userScores.bmi} ppmValue={userScores.ppm} cpmValue={userScores.cpm}/>
                     <CaloricContentOfDiet caloricContent={userScores.caloricContent}/>
-                    <SaveCalculations />
+                    <SaveCalculations userCalorieNeeds={userCalorieNeeds} />
                 </div>
             </>
         )
