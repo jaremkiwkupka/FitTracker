@@ -1,0 +1,31 @@
+.caloric-balance-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.caloric-balance-circle {
+  width: 200px;
+  height: 200px;
+  border: 4px solid #e31076;
+  border-radius: 50%;
+  margin-bottom: 50px;
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.caloric-balance-circle--descr {
+  color: #adacad;
+}
+.caloric-balance-circle--summary {
+  color: #e31076;
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+.caloric-balance-circle--macro {
+  color: #adacad;
+  font-size: 0.7em;
+  margin-bottom: 20px;
+}

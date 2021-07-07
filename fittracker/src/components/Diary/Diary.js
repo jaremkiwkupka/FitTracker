@@ -4,6 +4,7 @@ import "../../styles/_layout.scss";
 import "../Diary/Diary.scss";
 import {Date} from "./Date/Date";
 import {Meals} from "./Meals/Meals";
+import {CaloricBalance} from "./CaloricBalance/CaloricBalance";
 
 
 export const Diary = () => {
@@ -18,6 +19,7 @@ export const Diary = () => {
                     </div>
                     <Date />
                 </section>
+                <CaloricBalance/>
                 <Meals />
             </div>
         </div>
