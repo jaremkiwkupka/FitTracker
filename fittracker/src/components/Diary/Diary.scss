@@ -7,3 +7,11 @@
   background-color: $secondaryColor;
   margin: 20px;
 }
+.diary-container--heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.diary-heading {
+  padding: 0 0 20px 50px;
+}

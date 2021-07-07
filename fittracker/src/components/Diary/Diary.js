@@ -11,10 +11,13 @@ export const Diary = () => {
         <div className="container">
             <Menu />
             <div className="diary-container">
-                <h2 className="heading">Your Diary</h2>
-                <p className="paragraph">select date and add your meals</p>
-
-                <Date />
+                <section className="diary-container--heading">
+                    <div>
+                        <h2 className="heading diary-heading">Your Diary</h2>
+                        <p className="paragraph">select date and add your meals</p>
+                    </div>
+                    <Date />
+                </section>
                 <Meals />
             </div>
         </div>
