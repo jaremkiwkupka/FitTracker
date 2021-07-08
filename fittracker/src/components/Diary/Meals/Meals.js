@@ -1,6 +1,9 @@
 import React, {useState} from "react";
 import "../Meals/Meals.scss";
-import {MealBox} from "./MealBox/MealBox";
+import {Breakfast} from "./Breakfast/Breakfast";
+import {Snack} from "./Snack/Snack";
+import {Dinner} from "./Dinner/Dinner";
+import {Supper} from "./Supper/Supper";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 
@@ -12,22 +15,22 @@ export const Meals = () => {
 
     let showBreakfastBox;
     if(showBreakfast) {
-        showBreakfastBox = <MealBox />
+        showBreakfastBox = <Breakfast />
     }
 
     let showSnackBox;
     if(showSnack) {
-        showSnackBox = <MealBox />
+        showSnackBox = <Snack />
     }
 
     let showDinnerBox;
     if(showDinner) {
-        showDinnerBox = <MealBox />
+        showDinnerBox = <Dinner />
     }
 
     let showSupperBox;
     if(showSupper) {
-        showSupperBox = <MealBox />
+        showSupperBox = <Supper />
     }
 
     return (
