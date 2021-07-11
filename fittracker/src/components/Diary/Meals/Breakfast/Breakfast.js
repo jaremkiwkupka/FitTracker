@@ -3,25 +3,28 @@ import React, {useState, useEffect} from "react";
 export const Breakfast = () => {
 
     const [breakfastList, setBreakfastList] = useState([]);
+    const [selectedDish, setSelectedDish] = useState("");
 
     useEffect(() => {
         fetch('http://localhost:4000/breakfast', {
             method: "GET"
         }).then((res) => res.json())
             .then((breakfast) => {
-                setBreakfastList(breakfast.map((el) => el.name))
+                setBreakfastList(breakfast)
             })
     }, []);
 
-    console.log(breakfastList);
+    const handleChange = (e) => {
+        setSelectedDish(JSON.parse(e.target.value));
+    }
 
     return (
         <div className="meal-form-container">
-            <form className="meal-form">
+            <div className="meal-form">
                 <form className="meal-add-ingredients">
                     <label className="meal-form--label"> select dish:
-                        <select className="meals-select--light">
-                            {breakfastList.map((el) => <option>{el}</option>)}
+                        <select className="meals-select--light" onChange={handleChange}>
+                            {breakfastList.map((breakfast, id) => <option value={JSON.stringify(breakfast)} key={breakfast.id}>{breakfast.name}</option>)}
                         </select>
                     </label>
                     <label className="meal-form--label"> number of servings:
@@ -29,10 +32,11 @@ export const Breakfast = () => {
                     </label>
                     <button className="meal-type--addMeal">+</button>
                 </form>
-                <div className="meal-ingredients--list" id="select">
-
+                <div className="meal-ingredients--recipe">
+                    <p>{selectedDish.name}</p>
+                    <p>calories: {selectedDish.calories} | Proteins: {selectedDish.protein} | Carbohydrates: {selectedDish.carbo} | Fats: {selectedDish.fat} </p>
                 </div>
-            </form>
+            </div>
         </div>
     )
 }
