@@ -51,15 +51,20 @@ export const Form = () => {
         const forMale = () => {
             return userScores.ppm = ((655.1 + (9.563 * form.weight) + (1.85 * form.height) - (4.676 * form.age)).toFixed(0));
         }
+        let bmi = ((form.weight / Math.pow(form.height, 2)) * 10000).toFixed(2);
+        let ppm = femaleChecked === true && maleChecked === false ? forFemale() : forMale();
+        let cpm = ((activityLevel * userScores.ppm).toFixed(0));
 
         setUserScores(userScores => {
             return {
                 ...userScores,
-                bmi: ((form.weight / Math.pow(form.height, 2)) * 10000).toFixed(2),
-                ppm: femaleChecked === true && maleChecked === false ? forFemale() : forMale(),
-                cpm: ((activityLevel * userScores.ppm).toFixed(0)),
-                caloricContent: ((userScores.cpm * 0.8).toFixed(0))
+                bmi: bmi,
+                ppm: ppm,
+                cpm: cpm,
+                caloricContent: ((cpm * 0.8).toFixed(0))
             }
+        }, () => {
+            console.log(userScores);
         });
     }
 
