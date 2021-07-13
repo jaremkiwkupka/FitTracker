@@ -1,0 +1,187 @@
+{
+  "breakfast": [
+    {
+      "id": 1,
+      "name": "Pancakes with banana and bitter chocolate",
+      "calories": 443,
+      "carbo": 69,
+      "protein": 16,
+      "fat": 11
+    },
+    {
+      "id": 2,
+      "name": "Omelette with vegetables",
+      "calories": 470,
+      "carbo": 14,
+      "protein": 34,
+      "fat": 32
+    },
+    {
+      "id": 3,
+      "name": "Wraps with ham and egg",
+      "calories": 515,
+      "carbo": 39,
+      "protein": 33,
+      "fat": 26
+    },
+    {
+      "id": 4,
+      "name": "Porridge with forest fruits",
+      "calories": 471,
+      "carbo": 64,
+      "protein": 16,
+      "fat": 16
+    },
+    {
+      "id": 5,
+      "name": "Sandwich with cheese",
+      "calories": 261,
+      "carbo": 28,
+      "protein": 9,
+      "fat": 13
+    }
+  ],
+  "dinner": [
+    {
+      "id": 1,
+      "name": "Fried cod with potatoes and coleslaw salad",
+      "calories": 587,
+      "carbo": 62,
+      "protein": 32,
+      "fat": 26
+    },
+    {
+      "id": 2,
+      "name": "Paste casserole with broccoli and ham",
+      "calories": 661,
+      "carbo": 72,
+      "protein": 36,
+      "fat": 27
+    },
+    {
+      "id": 3,
+      "name": "Spaghetti bolognese",
+      "calories": 637,
+      "carbo": 80,
+      "protein": 38,
+      "fat": 18
+    },
+    {
+      "id": 4,
+      "name": "Salad with chicken and avocado",
+      "calories": 458,
+      "carbo": 19,
+      "protein": 40,
+      "fat": 26
+    },
+    {
+      "id": 5,
+      "name": "Salami pizza",
+      "calories": 1008,
+      "carbo": 96,
+      "protein": 55,
+      "fat": 44
+    }
+  ],
+  "snack": [
+    {
+      "id": 1,
+      "name": "Handful of nuts",
+      "calories": 200,
+      "carbo": 2,
+      "protein": 5,
+      "fat": 19
+    },
+    {
+      "id": 2,
+      "name": "Mango and strawberries smoothie",
+      "calories": 151,
+      "carbo": 38,
+      "protein": 2,
+      "fat": 1
+    },
+    {
+      "id": 3,
+      "name": "Natural cherry and banana ice cream",
+      "calories": 245,
+      "carbo": 57,
+      "protein": 4,
+      "fat": 2
+    },
+    {
+      "id": 4,
+      "name": "Fit balls with dried apple and cinnamon",
+      "calories": 105,
+      "carbo": 19,
+      "protein": 2,
+      "fat": 3
+    },
+    {
+      "id": 5,
+      "name": "Cherries crumble",
+      "calories": 307,
+      "carbo": 39,
+      "protein": 5,
+      "fat": 15
+    }
+  ],
+  "supper": [
+    {
+      "id": 1,
+      "name": "Salad with mozzarella and tomatoes",
+      "calories": 258,
+      "carbo": 10,
+      "protein": 13,
+      "fat": 19
+    },
+    {
+      "id": 2,
+      "name": "Mexican soup",
+      "calories": 314,
+      "carbo": 24,
+      "protein": 23,
+      "fat": 13
+    },
+    {
+      "id": 3,
+      "name": "Chicken with rice, avocado and pepper",
+      "calories": 737,
+      "carbo": 76,
+      "protein": 52,
+      "fat": 27
+    },
+    {
+      "id": 4,
+      "name": "Skewers with tzatziki sauce",
+      "calories": 469,
+      "carbo": 20,
+      "protein": 68,
+      "fat": 14
+    },
+    {
+      "id": 5,
+      "name": "Chicken salad",
+      "calories": 380,
+      "carbo": 14,
+      "protein": 23,
+      "fat": 25
+    }
+  ],
+  "caloricNeeds": {
+    "bmi": "22.19",
+    "ppm": "1296",
+    "cpm": "2722",
+    "caloricContent": "2178"
+  },
+  "saveTheDay": [
+    {
+      "id": 1,
+      "date": "2021-07-08",
+      "caloriesSum": 1457,
+      "proteinSum": 74,
+      "carboSum": 189,
+      "fatSum": 46,
+      "remainingCalories": 721
+    }
+  ]
+}

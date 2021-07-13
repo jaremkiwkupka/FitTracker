@@ -16,7 +16,8 @@ export const Meals = ({
                           selectedDinner,
                           handleSupperChange,
                           selectedSupper,
-                          handleCount
+                          handleCount,
+                          handleSaveDay
                       }) => {
     const [showBreakfast, setShowBreakfast] = useState(false);
     const [showSnack, setShowSnack] = useState(false);
@@ -49,7 +50,7 @@ export const Meals = ({
             <div className="meals-container">
                 <div>
                     <button onClick={handleCount}>Count</button>
-                    <button>Save</button>
+                    <button onClick={handleSaveDay}>Save</button>
                 </div>
                 <div className="meal-type">
                     <h4 className="meal-type--heading">Breakfast</h4>

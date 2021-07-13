@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import "../Date/Date.scss";
 
-export const Date = () => {
-    const [date, setDate] = useState("Select date");
+export const Date = ({date, setDate}) => {
 
     return (
         <div className="diary-date">
@@ -10,7 +9,6 @@ export const Date = () => {
 
             <input className="diary-date--input" type="date" id="calendar" name="calendar"
                    onChange={e => setDate(e.target.value)}
-                   value="2021-07-06"
                    min="2021-01-01" max="2025-12-31"/>
         </div>
     )
