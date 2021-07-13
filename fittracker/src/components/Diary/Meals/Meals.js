@@ -7,37 +7,54 @@ import {Supper} from "./Supper/Supper";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 
-export const Meals = () => {
+export const Meals = ({
+                          handleBreakfastChange,
+                          selectedBreakfast,
+                          handleSnackChange,
+                          selectedSnack,
+                          handleDinnerChange,
+                          selectedDinner,
+                          handleSupperChange,
+                          selectedSupper,
+                          handleCount
+                      }) => {
     const [showBreakfast, setShowBreakfast] = useState(false);
     const [showSnack, setShowSnack] = useState(false);
     const [showDinner, setShowDinner] = useState(false);
     const [showSupper, setShowSupper] = useState(false);
 
+
     let showBreakfastBox;
     if(showBreakfast) {
-        showBreakfastBox = <Breakfast />
+        showBreakfastBox = <Breakfast handleBreakfastChange={handleBreakfastChange} selectedBreakfast={selectedBreakfast}/>
     }
 
     let showSnackBox;
     if(showSnack) {
-        showSnackBox = <Snack />
+        showSnackBox = <Snack handleSnackChange={handleSnackChange} selectedSnack={selectedSnack}/>
     }
 
     let showDinnerBox;
     if(showDinner) {
-        showDinnerBox = <Dinner />
+        showDinnerBox = <Dinner handleDinnerChange={handleDinnerChange} selectedDinner={selectedDinner}/>
     }
 
     let showSupperBox;
     if(showSupper) {
-        showSupperBox = <Supper />
+        showSupperBox = <Supper handleSupperChange={handleSupperChange} selectedSupper={selectedSupper}/>
     }
 
     return (
         <>
             <div className="meals-container">
+                <div>
+                    <button onClick={handleCount}>Count</button>
+                    <button>Save</button>
+                </div>
                 <div className="meal-type">
                     <h4 className="meal-type--heading">Breakfast</h4>
+                    <p>{selectedBreakfast.name}</p>
+                    <p>{selectedBreakfast.calories} kcal</p>
                     <span className="meal-type--addMeal">
                         <FontAwesomeIcon
                             icon={faPlus}
@@ -48,6 +65,8 @@ export const Meals = () => {
                 {showBreakfastBox}
                 <div className="meal-type">
                     <h4 className="meal-type--heading">Snack</h4>
+                    <p>{selectedSnack.name}</p>
+                    <p>{selectedSnack.calories} kcal</p>
                     <span className="meal-type--addMeal">
                         <FontAwesomeIcon
                             icon={faPlus}
@@ -58,6 +77,8 @@ export const Meals = () => {
                 {showSnackBox}
                 <div className="meal-type">
                     <h4 className="meal-type--heading">Dinner</h4>
+                    <p>{selectedDinner.name}</p>
+                    <p>{selectedDinner.calories} kcal</p>
                     <span className="meal-type--addMeal">
                         <FontAwesomeIcon
                             icon={faPlus}
@@ -68,6 +89,8 @@ export const Meals = () => {
                 {showDinnerBox}
                 <div className="meal-type">
                     <h4 className="meal-type--heading">Supper</h4>
+                    <p>{selectedSupper.name}</p>
+                    <p>{selectedSupper.calories} kcal</p>
                     <span className="meal-type--addMeal">
                         <FontAwesomeIcon
                             icon={faPlus}

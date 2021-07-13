@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from "react";
 
-export const Breakfast = () => {
+export const Breakfast = ({handleBreakfastChange, selectedBreakfast}) => {
 
     const [breakfastList, setBreakfastList] = useState([]);
-    const [selectedDish, setSelectedDish] = useState("");
 
     useEffect(() => {
         fetch('http://localhost:4000/breakfast', {
@@ -14,27 +13,20 @@ export const Breakfast = () => {
             })
     }, []);
 
-    const handleChange = (e) => {
-        setSelectedDish(JSON.parse(e.target.value));
-    }
-
     return (
         <div className="meal-form-container">
             <div className="meal-form">
                 <form className="meal-add-ingredients">
                     <label className="meal-form--label"> select dish:
-                        <select className="meals-select--light" onChange={handleChange}>
+                        <select className="meals-select--light" onChange={handleBreakfastChange}>
                             {breakfastList.map((breakfast, id) => <option value={JSON.stringify(breakfast)} key={breakfast.id}>{breakfast.name}</option>)}
                         </select>
                     </label>
-                    <label className="meal-form--label"> number of servings:
-                        <input className="meals-input--light" placeholder="grams" type="number"/>
-                    </label>
-                    <button className="meal-type--addMeal">+</button>
+                    <button className="meal-type--addMeal">Accept Choice</button>
                 </form>
                 <div className="meal-ingredients--recipe">
-                    <p>{selectedDish.name}</p>
-                    <p>calories: {selectedDish.calories} | Proteins: {selectedDish.protein} | Carbohydrates: {selectedDish.carbo} | Fats: {selectedDish.fat} </p>
+                    <p>{selectedBreakfast.name}</p>
+                    <p>calories: {selectedBreakfast.calories} | Proteins: {selectedBreakfast.protein} | Carbohydrates: {selectedBreakfast.carbo} | Fats: {selectedBreakfast.fat} </p>
                 </div>
             </div>
         </div>
