@@ -26,10 +26,6 @@
   font-size: 3em;
   margin: 0 30px;
   cursor: pointer;
-
-  &:hover {
-    color: #e31076;
-  }
 }
 .form-fields--item {
   margin: 0 30px;
@@ -51,7 +47,6 @@
   font-family: $basicFont;
   text-align: center;
 }
-
 .calculate-btn {
   color: #fff;
   text-transform: uppercase;
@@ -60,12 +55,6 @@
   border-radius: 20px;
   background-image: linear-gradient(to right, #e31071, #e5008e, #dd00b0, #c600d7, #9933ff);
   cursor: pointer;
-}
-.active {
-  color: #e31071;
-}
-.inactive {
-  color: #fff;
 }
 .form-validation-error {
   color: #fff;
