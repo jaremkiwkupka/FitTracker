@@ -8,6 +8,7 @@ export const GenderIcons = ({female, male, getFemale, getMale}) => {
     const femaleFA = <FontAwesomeIcon icon={faFemale} />;
     const maleFA = <FontAwesomeIcon icon={faMale} />;
 
+
     return (
         <div className="form-fields-icons">
             <label className="form-fields--singleIcon gender-icon" id="female-icon">
