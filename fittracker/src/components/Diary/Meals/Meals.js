@@ -48,14 +48,16 @@ export const Meals = ({
     return (
         <>
             <div className="meals-container">
-                <div>
-                    <button onClick={handleCount}>Count</button>
-                    <button onClick={handleSaveDay}>Save</button>
+                <div className="meals-btns">
+                    <button className="caloric-balance-btn" onClick={handleCount}>Count</button>
+                    <button className="caloric-balance-btn" onClick={handleSaveDay}>Save</button>
                 </div>
                 <div className="meal-type">
-                    <h4 className="meal-type--heading">Breakfast</h4>
-                    <p>{selectedBreakfast.name}</p>
-                    <p>{selectedBreakfast.calories} kcal</p>
+                    <h4 className="meal-type--heading breakfast-heading">Breakfast</h4>
+                    <div className="meal-type-selected">
+                        <p className="meal-type-selected--descr">{selectedBreakfast.name}</p>
+                        <p className="meal-type-selected--descr">{selectedBreakfast.calories} kcal</p>
+                    </div>
                     <span className="meal-type--addMeal">
                         <FontAwesomeIcon
                             icon={faPlus}
@@ -66,8 +68,10 @@ export const Meals = ({
                 {showBreakfastBox}
                 <div className="meal-type">
                     <h4 className="meal-type--heading">Snack</h4>
-                    <p>{selectedSnack.name}</p>
-                    <p>{selectedSnack.calories} kcal</p>
+                    <div className="meal-type-selected">
+                        <p className="meal-type-selected--descr">{selectedSnack.name}</p>
+                        <p className="meal-type-selected--descr">{selectedSnack.calories} kcal</p>
+                    </div>
                     <span className="meal-type--addMeal">
                         <FontAwesomeIcon
                             icon={faPlus}
@@ -78,8 +82,10 @@ export const Meals = ({
                 {showSnackBox}
                 <div className="meal-type">
                     <h4 className="meal-type--heading">Dinner</h4>
-                    <p>{selectedDinner.name}</p>
-                    <p>{selectedDinner.calories} kcal</p>
+                    <div className="meal-type-selected">
+                        <p className="meal-type-selected--descr">{selectedDinner.name}</p>
+                        <p className="meal-type-selected--descr">{selectedDinner.calories} kcal</p>
+                    </div>
                     <span className="meal-type--addMeal">
                         <FontAwesomeIcon
                             icon={faPlus}
@@ -90,8 +96,10 @@ export const Meals = ({
                 {showDinnerBox}
                 <div className="meal-type">
                     <h4 className="meal-type--heading">Supper</h4>
-                    <p>{selectedSupper.name}</p>
-                    <p>{selectedSupper.calories} kcal</p>
+                    <div className="meal-type-selected">
+                        <p className="meal-type-selected--descr">{selectedSupper.name}</p>
+                        <p className="meal-type-selected--descr">{selectedSupper.calories} kcal</p>
+                    </div>
                     <span className="meal-type--addMeal">
                         <FontAwesomeIcon
                             icon={faPlus}

@@ -22,10 +22,9 @@ export const Supper = ({handleSupperChange, selectedSupper}) => {
                             {supperList.map((supper, id) => <option value={JSON.stringify(supper)} key={supper.id}>{supper.name}</option>)}
                         </select>
                     </label>
-                    <button className="meal-type--addMeal">Choose</button>
                 </form>
                 <div className="meal-ingredients--recipe">
-                    <p>{selectedSupper.name}</p>
+                    <p  className="meal-ingredients--name">{selectedSupper.name}</p>
                     <p>calories: {selectedSupper.calories} | Proteins: {selectedSupper.protein} | Carbohydrates: {selectedSupper.carbo} | Fats: {selectedSupper.fat} </p>
                 </div>
             </div>

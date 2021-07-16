@@ -22,10 +22,9 @@ export const Breakfast = ({handleBreakfastChange, selectedBreakfast}) => {
                             {breakfastList.map((breakfast, id) => <option value={JSON.stringify(breakfast)} key={breakfast.id}>{breakfast.name}</option>)}
                         </select>
                     </label>
-                    <button className="meal-type--addMeal">Accept Choice</button>
                 </form>
                 <div className="meal-ingredients--recipe">
-                    <p>{selectedBreakfast.name}</p>
+                    <p className="meal-ingredients--name">{selectedBreakfast.name}</p>
                     <p>calories: {selectedBreakfast.calories} | Proteins: {selectedBreakfast.protein} | Carbohydrates: {selectedBreakfast.carbo} | Fats: {selectedBreakfast.fat} </p>
                 </div>
             </div>

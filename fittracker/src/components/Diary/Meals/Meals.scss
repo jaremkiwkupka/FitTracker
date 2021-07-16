@@ -9,6 +9,7 @@
 .meal-type {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: $primaryColor;
   color: #fff;
   text-transform: uppercase;
@@ -21,6 +22,18 @@
 .meal-type--heading {
   align-self: center;
   font-weight: 700;
+}
+.breakfast-heading {
+  width: 4%;
+}
+.meal-type-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+}
+.meal-type-selected--descr {
+  text-transform: none;
 }
 .meal-form-container {
   width: 100%;
@@ -67,9 +80,31 @@
 }
 .meal-ingredients--recipe {
   color: #fff;
-  text-transform: uppercase;
+  text-transform: capitalize;
   border: 1px dotted #fff;
   border-radius: 5px;
   margin-top: 70px;
   padding: 50px;
+}
+.meal-ingredients--name {
+  margin: 20px 0;
+  font-weight: 700;
+}
+.meals-btns {
+  margin-bottom: 30px;
+}
+.caloric-balance-btn {
+  padding: 20px 40px;
+  background: #3b3b4d;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin: 0 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primaryColor;
+    border: 1px solid $primaryColor;
+  }
 }
