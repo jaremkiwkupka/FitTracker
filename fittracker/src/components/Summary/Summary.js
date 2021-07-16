@@ -5,6 +5,7 @@ import "./Summary.scss";
 export const Summary = () => {
 
     const [daySummary, setDaySummary] = useState([]);
+    const [caloricNeeds, setCaloricNeeds] = useState("");
 
     useEffect(() => {
         fetch('http://localhost:4000/saveTheDay', {
@@ -15,6 +16,15 @@ export const Summary = () => {
             })
     }, []);
 
+    useEffect(() => {
+        fetch('http://localhost:4000/caloricNeeds', {
+            method: "GET"
+        }).then((res) => res.json())
+            .then((value) => {
+                setCaloricNeeds(value);
+            })
+    })
+
     return (
         <div className="container">
             <Menu />
@@ -23,6 +33,9 @@ export const Summary = () => {
                     <div>
                         <h2 className="heading summary-heading">Calories Summary</h2>
                         <p className="paragraph">Below you will find a list of saved days with your caloric balance</p>
+                    </div>
+                    <div>
+                        <p className="heading goal-heading">Your goal: <span>{caloricNeeds.caloricContent}</span></p>
                     </div>
                 </section>
                 <section className="summary-content">
