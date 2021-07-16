@@ -47,16 +47,22 @@ export const Diary = () => {
             method: "GET"
         }).then((res) => res.json())
             .then((caloricNeeds) => {
-                setCaloricNeeds(caloricNeeds);
+                setCaloricNeeds(caloricNeeds.caloricContent);
             })
     }, []);
 
+    let calories = selectedBreakfast.calories + selectedSnack.calories + selectedDinner.calories + selectedSupper.calories;
+    let protein = selectedBreakfast.protein + selectedSnack.protein + selectedDinner.protein + selectedSupper.protein;
+    let carbo = selectedBreakfast.carbo + selectedSnack.carbo + selectedDinner.carbo + selectedSupper.carbo;
+    let fat = selectedBreakfast.fat + selectedSnack.fat + selectedDinner.fat + selectedSupper.fat;
+    let remaining = caloricNeeds - calories;
+
     const handleCount = () => {
-        setCaloriesSum(selectedBreakfast.calories + selectedSnack.calories + selectedDinner.calories + selectedSupper.calories);
-        setProteinSum(selectedBreakfast.protein + selectedSnack.protein + selectedDinner.protein + selectedSupper.protein);
-        setCarboSum(selectedBreakfast.carbo + selectedSnack.carbo + selectedDinner.carbo + selectedSupper.carbo);
-        setFatSum(selectedBreakfast.fat + selectedSnack.fat + selectedDinner.fat + selectedSupper.fat);
-        setRemainingCalories(caloricNeeds.caloricContent - caloriesSum);
+        setCaloriesSum(calories);
+        setProteinSum(protein);
+        setCarboSum(carbo);
+        setFatSum(fat);
+        setRemainingCalories(remaining);
     }
 
     //SAVING THE DAY
