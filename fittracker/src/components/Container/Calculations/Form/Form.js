@@ -4,6 +4,7 @@ import {Scores} from "../Scores/Scores";
 import {CaloricContentOfDiet} from "../CaloricContentOfDiet/CaloricContentOfDiet";
 import {SaveCalculations} from "../SaveCalculations/SaveCalculations";
 import {GenderIcons} from "./GenderIcons/GenderIcons";
+import validator from "validator/es";
 
 export const Form = () => {
 
@@ -41,8 +42,41 @@ export const Form = () => {
         {id: 5, desc: "physical work, heavy workouts", val: 2.4}
     ];
 
-    const calculate = (e) => {
-        e.preventDefault();
+    const [error, setError] = useState("");
+
+    const validate = () => {
+        setError("");
+
+        if(validator.isEmpty(form.age)) {
+            return (
+                setError("Age field is required!")
+            )
+        }
+        if(validator.isEmpty(form.height)) {
+            return (
+                setError("Height field is required!")
+            )
+        }
+        if(validator.isEmpty(form.weight)) {
+            return (
+                setError("Weight field is required!")
+            )
+        }
+
+        if(error !== "") {
+            setUserScores({
+                ...userScores,
+                bmi: 0,
+                ppm: 0,
+                cpm: 0,
+                caloricContent: 0
+            })
+        } else {
+            calculate();
+        }
+    }
+
+    const calculate = () => {
 
         const activityLevel = document.getElementById("activity-levels").value;
         const forFemale = () => {
@@ -63,8 +97,6 @@ export const Form = () => {
                 cpm: cpm,
                 caloricContent: ((cpm * 0.8).toFixed(0))
             }
-        }, () => {
-            console.log(userScores);
         });
     }
 
@@ -80,6 +112,7 @@ export const Form = () => {
                 <div className="form-container">
                     <h2 className="heading">Determine your total daily calorie needs</h2>
                     <p className="paragraph">fill in the form fields</p>
+                    {error ? <p className="form-validation-error">{error}</p> : null}
                     <form className="form-fields">
                         <div className="form-fields-toFill">
                             <div className="form-fields--item">
@@ -96,15 +129,13 @@ export const Form = () => {
                             </div>
                             <div className="form-fields--item">
                                 <label className="form-fields--label">Your activity</label>
-                                <select className="form-fields--select" id="activity-levels">
-                                    value={form.activity}
-                                    onChange={handleChange}
-                                    {pal.map((el, id) => <option value={el.val} key={el.id}>{el.desc}</option>)}
+                                <select className="form-fields--select" id="activity-levels" onChange={handleChange}>
+                                    {pal.map((el) => <option value={el.val} key={el.id}>{el.desc}</option>)}
                                 </select>
                             </div>
                         </div>
                         <GenderIcons getFemale={handleFemaleChange} getMale={handleMaleChange}/>
-                        <input className="calculate-btn" type="submit" value="Calculate" onClick={calculate}/>
+                        <button className="calculate-btn" type="submit" value="Calculate" onClick={(e) => {e.preventDefault(); validate();}}>Calculate</button>
                     </form>
                 </div>
                 <div className="calculations-container">
