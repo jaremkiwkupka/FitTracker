@@ -75,21 +75,29 @@ export const Diary = () => {
         remainingCalories: remainingCalories
     }
 
+    const [error, setError] = useState("");
+
     const handleSaveDay = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:4000/saveTheDay', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(daySummary),
-        })
-            .then((res) => res.json());
+        setError("");
 
-        alert("Your data has been saved!");
+        if(date === "Select date") {
+            setError("Date is required!")
+        } else {
+            fetch('http://localhost:4000/saveTheDay', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(daySummary),
+            })
+                .then((res) => res.json());
 
+            alert("Your data has been saved!");
+        }
     }
+
 
     return (
         <div className="container">
@@ -101,6 +109,9 @@ export const Diary = () => {
                         <p className="paragraph">select date and choose your meals</p>
                     </div>
                     <Date date={date} setDate={setDate} />
+                </section>
+                <section>
+                    {error ? <p className="form-validation-error">{error}</p> : null}
                 </section>
                 <CaloricBalance
                     caloriesSum={caloriesSum}
