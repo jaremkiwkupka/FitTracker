@@ -1,0 +1,26 @@
+@import "../../../styles/variables";
+
+.diary-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 50px;
+}
+.diary-date--heading {
+  color: #fff;
+  font-size: 2em;
+  margin-bottom: 20px;
+  padding: 50px 0 0 0;
+}
+.diary-date--input {
+  color: #fff;
+  padding: 10px;
+  background: $secondaryColor;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #fff;
+  font-family: $basicFont;
+  text-align: center;
+}

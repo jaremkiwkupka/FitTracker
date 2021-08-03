@@ -1,0 +1,22 @@
+@import "../../../../styles/variables";
+
+.caloricContent-wrapper {
+  width: 400px;
+  height: 200px;
+  background-color: $secondaryColor;
+  border-radius: 5px;
+  margin: 20px 0;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.caloricContent-text {
+  color: #fff;
+  padding: 0 0 40px 0;
+}
+.caloricContent-value {
+  color: #e31076;
+  font-size: 3em;
+}

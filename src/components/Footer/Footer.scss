@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+footer {
+  color: #adacad;
+  background-color: $secondaryColor;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-about {
+ width: 400px;
+  margin-left: 100px;
+}
+.footer-about--title {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.footer-about--text {
+  margin-bottom: 10px;
+}
+.footer-socials {
+  margin-right: 100px;
+}
+.footer-socials--icons {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}

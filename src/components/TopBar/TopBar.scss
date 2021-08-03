@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+
+.top-bar {
+  height: 120px;
+  background-color: $secondaryColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+

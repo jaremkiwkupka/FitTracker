@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+
+.diary-container {
+  width: 80vw;
+  height: 100%;
+  border-radius: 5px;
+  background-color: $secondaryColor;
+  margin: 20px;
+}
+.diary-container--heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.diary-heading {
+  padding: 50px 0 20px 50px;
+}
+.form-validation-error {
+  color: #fff;
+  background-color: #e31071;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}

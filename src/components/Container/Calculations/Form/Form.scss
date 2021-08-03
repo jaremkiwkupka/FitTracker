@@ -1,0 +1,65 @@
+@import "../../../../styles/variables";
+
+.form-container {
+  width: 80vw;
+  height: 100%;
+  border-radius: 5px;
+  background-color: $secondaryColor;
+  margin: 20px 20px 0 20px;
+}
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 0 50px 0;
+}
+.form-fields-toFill {
+  display: flex;
+}
+.form-fields-icons {
+  display: flex;
+  margin: 50px auto;
+}
+.form-fields--singleIcon {
+  color: #fff;
+  font-size: 3em;
+  margin: 0 30px;
+  cursor: pointer;
+}
+.form-fields--item {
+  margin: 0 30px;
+}
+.form-fields--label {
+  color: #fff;
+  text-transform: lowercase;
+  padding: 20px;
+}
+.form-fields--input,
+.form-fields--select {
+  color: #fff;
+  padding: 10px;
+  background: $secondaryColor;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #fff;
+  font-family: $basicFont;
+  text-align: center;
+}
+.calculate-btn {
+  color: #fff;
+  text-transform: uppercase;
+  padding: 25px 50px;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(to right, #e31071, #e5008e, #dd00b0, #c600d7, #9933ff);
+  cursor: pointer;
+}
+.form-validation-error {
+  color: #fff;
+  background-color: #e31071;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}

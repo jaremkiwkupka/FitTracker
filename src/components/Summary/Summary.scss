@@ -1,0 +1,39 @@
+table {
+  margin-bottom: 50px;
+}
+.summary-container {
+  width: 80vw;
+  border-radius: 5px;
+  background-color: #3b3b4d;
+  margin: 20px;
+}
+.summary-container--heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.goal-heading {
+  margin-right: 50px;
+  span {
+   color: #e31076;
+  }
+}
+.summary-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+.summary-table--row {
+  text-align: center;
+}
+.summary-thead--cell {
+  color: #fff;
+  padding: 20px 80px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #fff;
+}
+.summary-table--cell {
+  color: #fff;
+  padding: 40px 0;
+  border-bottom: 1px solid #fff;
+}
