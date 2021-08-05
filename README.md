@@ -17,6 +17,3 @@ This project is written using:
 - JSON Server
 
 
-## Demo
-
-Click here to see [Demo](https://jaremkiwkupka.github.io/FitTracker/) of the project.
